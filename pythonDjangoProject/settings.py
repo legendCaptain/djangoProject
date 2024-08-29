@@ -73,14 +73,24 @@ WSGI_APPLICATION = 'pythonDjangoProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+"""
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",  # 说明我们想要底层去连接mysql
+        "NAME": 'aaa',  # 刚创建的学习样例数据库名字
+        'USER': 'root',  # sql用户名
+        'PASSWORD': '123456',  # sql密码
+        'HOST': 'localhost',  # sql连接的主机，默认是本地。127.0.0.1也可以
+        'PORT': 3306,  # 一般都为3306
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
